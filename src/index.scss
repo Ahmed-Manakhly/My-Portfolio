@@ -1,0 +1,557 @@
+// general reset 
+@import url('https://fonts.googleapis.com/css2?family=Delicious+Handrawn&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,900&family=Roboto:ital,wght@0,100;0,300;1,100&display=swap');
+
+
+
+*{
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    font-family: 'Poppins', sans-serif;
+}
+
+//---------------------------------------------- var's
+
+$main-color :  #ed0e4d ;
+$main-bg: #191b1e ;
+$gray-color : rgb(133, 114, 114) ;
+$dark-shadow : #0e0e0f ;
+$light-shadow : rgba(70,70,70,0.20) ;
+$lighter-shadow : rgba(255, 255, 245, 0.25);
+
+//--------------------------------------------------
+
+body {
+    background-color: $main-bg !important;
+    padding: 0 20px ;
+    height: 300vh;
+}
+
+//------------------------------------------------------------------
+.logo {
+    width : 60% ;
+    height:  60%;
+}
+//----------------------------------------
+.mainNav {
+  box-shadow: 0px 15px 13px -15px $gray-color; 
+    border-bottom: 1px $main-color solid;
+    background-color: $main-bg;
+    a {
+        text-align: center;
+        color: $gray-color;
+        cursor: pointer;
+        &.active {
+            color:  white !important;
+        }
+        &:hover {
+            color: $main-color ;
+        }
+    }
+    .toggler {
+        color:  $main-color !important;
+        outline: none;
+    }
+}
+//----------------------
+
+
+.navbar-toggler , .navbar-toggler:hover , .navbar-toggler:focus {
+        color:  transparent !important;
+        outline: none;
+}
+
+
+//============================================================================================
+%tran {
+  transition: 150ms;
+  -webkit-transition: 150ms;
+  -moz-transition: 150ms;
+  -ms-transition: 150ms;
+  -o-transition: 150ms;
+}
+
+%rounded {
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+
+%rad15 {
+  border-radius: 15px;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  -ms-border-radius: 15px;
+  -o-border-radius: 15px;
+}
+
+%btnrad {
+  border-radius: 30rem;
+  -webkit-border-radius: 30rem;
+  -moz-border-radius: 30rem;
+  -ms-border-radius: 30rem;
+  -o-border-radius: 30rem;
+}
+
+//============================================================================================
+
+/* SECTIONS */
+
+.section-container {
+  display: flex;
+}
+//-----------------
+.secOne {
+  box-shadow: -10px -10px 15px $dark-shadow  , 10px 10px 15px $light-shadow;
+  overflow: hidden;
+  min-height: 80vh;
+  @extend %rad15 ;
+}
+
+.secpro {
+  overflow: hidden;
+  min-height: 80vh;
+  box-shadow: 0px 15px 8px -10px $dark-shadow ; 
+  border-bottom: 1px $main-color solid;
+}
+
+
+
+.section__pic-container {
+  position: relative;
+  display: block;
+  width: 500px;
+  height: 500px ;
+  background-color: $main-bg;
+  box-shadow: inset -10px -10px 15px $dark-shadow,
+  10px 10px 15px $light-shadow;
+  border: $light-shadow solid 0.2px ;
+  @extend %rounded ;
+  img{
+    object-fit: cover;
+  }
+  &::after {
+    content: '';
+  }
+}
+
+.section__text {
+  align-self: center;
+  text-align: center;
+  p {
+    font-weight: 600;
+    position: relative;
+    z-index: 1;
+    text-shadow: 3.5px 3.5px 2.5px black ;
+  }
+}
+
+.section__text__p1 {
+  text-align: center;
+  color: $gray-color ;
+
+}
+
+.section__text__p2 {
+  font-size: 1.75rem;
+  margin-bottom: 1rem;
+  color: white;
+  position: relative;
+  z-index: 1;
+  text-shadow: 3.5px 3.5px 2.5px black ;
+}
+  
+.title {
+  font-size: 2.10rem;
+  text-align: center;
+  color: $main-color !important;
+  text-shadow: 3.5px 3.5px 2.5px black;
+  position: relative;
+  z-index: 1;
+}
+  
+.socials-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+  gap: 1rem;
+  .icon {
+    cursor: pointer;
+    @extend %tran ;
+    height: 2rem;
+    width: 2rem;
+    border: solid 3px $gray-color;
+    background-color: $gray-color;
+    overflow: hidden;
+    @extend %rounded ;
+    &:hover {
+      background-color: $main-color !important;
+      border: solid 3px $main-color !important;
+      box-shadow: -2px -3px 18px $lighter-shadow;
+      transform: translatey(-2px);
+      -webkit-transform: translatey(-2px);
+      -moz-transform: translatey(-2px);
+      -ms-transform: translatey(-2px);
+      -o-transform: translatey(-2px);
+    }
+  }
+}
+//----------------------------------------------
+
+.btn-container {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.btn {
+  cursor: pointer;
+  font-weight: 150;
+  transition: all 300ms ease;
+  padding: 1rem;
+  width: 9rem;
+  @extend %btnrad ;
+  @extend %tran ;
+}
+
+.btn-color-1,
+.btn-color-2 {
+  border: rgb(196, 67, 67)  2px solid !important;
+}
+
+
+.btn-color-1,
+.btn-color-2:hover{
+    background-color:  rgb(196, 67, 67) !important;
+    color: white!important;
+    box-shadow: 5px 10px 18px rgba(255, 0, 0, 0.25);
+}
+
+  .btn-color-2 {
+    // cursor: pointer;
+    background-color: transparent !important;
+    color:  rgb(196, 67, 67) !important;
+  }
+  
+
+  .btn-color-1:hover {
+    box-shadow: 3px 5px 20px rgba(255, 255, 245, 0.25);
+  }
+
+  
+//------------------------------------------------------------------
+.about-col {
+  .card {
+    box-shadow: -5px -5px 15px 0.5px #f8246046 , 10px 10px 15px $light-shadow;
+    background-color: $dark-shadow  ;
+    @extend %tran ;
+    cursor: pointer;
+    &:hover  {
+      box-shadow: -5px -5px 15px 0.5px $dark-shadow, 10px 10px 15px $lighter-shadow;
+      .h-bar::after {
+        background-color:  $main-color;
+      }
+    }
+    .v-bar {
+      position: absolute;
+      background-color:$dark-shadow  ;
+      height: 125%;
+      width: 10px;
+      top: 0;
+      left: -30px;
+      }
+    .h-bar {
+      position: absolute;
+      background-color: $dark-shadow  ;
+      height: 10px;
+      width: 30px;
+      top: 50px;
+      left: -30px;
+      &::after {
+        @extend %tran ;
+        position: absolute;
+        content: '';
+        width: 20px;
+        height: 20px;
+        @extend %rounded  ;
+        top: -5px;
+        left: -5px;
+        background-color:  $main-bg ;
+        border: $dark-shadow solid 5px;
+        }
+      }
+      .ico {
+        border-radius: 5px;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        -ms-border-radius: 5px;
+        -o-border-radius: 5px;
+        display: flex;
+        justify-content: center;
+        background-color: $dark-shadow ;
+        box-shadow: -5px -5px 15px 0.5px #f8246046 , 10px 10px 15px $light-shadow;
+        color: $main-color;
+        width: 100px;
+        padding: 3px;
+      }
+    }
+  }
+
+//---------------------------------------------------------------
+
+.skill-col {
+
+  .skillCard {
+    width: max-content;
+    overflow: hidden;
+    box-shadow: -5px -5px 15px 0.5px #f8246046 , 10px 10px 15px $light-shadow;
+    background-color: transparent ;
+    cursor: pointer;
+    @extend %tran ;
+    &:hover {
+      transform: translateY(-5px);
+      -webkit-transform: translateY(-5px);
+      -moz-transform: translateY(-5px);
+      -ms-transform: translateY(-5px);
+      -o-transform: translateY(-5px);
+      box-shadow: -5px -5px 15px 0.5px $dark-shadow, 10px 10px 15px $lighter-shadow;
+      }
+    .ico {
+      border-radius: 5px;
+      -webkit-border-radius: 5px;
+      -moz-border-radius: 5px;
+      -ms-border-radius: 5px;
+      -o-border-radius: 5px;
+      display: flex;
+      justify-content: center;
+      background-color: $dark-shadow;
+      box-shadow: -5px -5px 15px 0.5px #f8246046 , 10px 10px 15px $light-shadow;
+      color: $main-color;
+      width: 100px;
+      padding: 3px;
+      margin: auto;
+      .skillIco{
+        width:  50px;
+        height: 50px;
+        margin: 2px;
+      }
+    }
+  }
+}
+
+//-------------------------------------------------------------
+.pro-col {
+  overflow: hidden;
+  box-shadow: -10px -10px 15px $dark-shadow , 10px 10px 15px $light-shadow;
+  @extend %rad15 ;
+  @extend %tran ;
+  background-color: transparent;
+  &:hover  {
+    background-color: $dark-shadow;
+    box-shadow: -3px -3px 13px $main-color , 10px 10px 15px $lighter-shadow;
+  }
+  .img {
+    img {
+
+      cursor: pointer;
+      @extend %tran ;
+      &:hover {
+        transform: scale(1.15 , 1.15) rotate(-5deg);
+        -webkit-transform: scale(1.15 , 1.15) rotate(-5deg);
+        -moz-transform: scale(1.15 , 1.15) rotate(-5deg);
+        -ms-transform: scale(1.15 , 1.15) rotate(-5deg);
+        -o-transform: scale(1.15 , 1.15) rotate(-5deg);
+}
+    }
+  }
+  .details{
+    padding: 2px;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 5px;
+    .pro-icons {
+      width: 35%;
+      display: flex;
+      justify-content: space-between;
+      gap: 1px;
+      padding: 2px;
+      .pro-ico {
+        padding: 0;
+        cursor: pointer;
+        @extend %tran ;
+        height: 50px;
+        width: 50px;
+        border: solid 0.5px $gray-color;
+        background-color: $gray-color;
+        overflow: hidden;
+        @extend %rounded ;
+        &:hover {
+          background-color: $main-color !important;
+          border: solid 3px $main-color !important;
+          box-shadow: -2px -3px 18px $lighter-shadow;
+          transform: translatey(-2px);
+          -webkit-transform: translatey(-2px);
+          -moz-transform: translatey(-2px);
+          -ms-transform: translatey(-2px);
+          -o-transform: translatey(-2px);
+        }
+      }
+    }
+    .pro-title{
+      width: 65%;
+      color: $main-color;
+      text-align: center;
+      font-weight:900;
+    }
+  }
+  .des {
+    display: block;
+    text-align: center;
+    margin: 7px;
+    font-weight:400;
+    padding: 10px;
+  }
+}
+
+
+.contact-col {
+  overflow: hidden;
+  box-shadow: -10px -10px 15px $dark-shadow , 10px 10px 15px $light-shadow;
+  @extend %rad15 ;
+  @extend %tran ;
+  background-color: transparent;
+  .form-control {
+    border: none;
+    background-color: transparent;
+    input , 
+    textarea , 
+    input:-webkit-autofill , 
+    textarea:-webkit-autofill , 
+    input:autofill{
+      font-weight: 600;
+      color: white !important;
+      padding: 15px;
+      @extend %rad15 ;
+      background-color: $main-bg !important;
+      box-shadow: inset -10px -10px 15px $dark-shadow,
+      10px 10px 15px $light-shadow;
+      border: $light-shadow solid 3px !important;
+      &:focus , &:focus-visible ,&:-webkit-autofill:hover &:-webkit-autofill:focus{
+        font-weight: 600;
+        color: white !important;
+        outline: none;
+        border-color:   rgb(196, 67, 67) ;
+        background-color: $dark-shadow !important;
+      }
+      &::placeholder {
+        color: $lighter-shadow;
+        font-style: italic;
+        font-size: smaller;
+      }
+    }
+    label {
+      // display: block;
+      font-weight: bolder;
+      margin-bottom: 5px ;
+      color: $gray-color;
+      text-shadow: 3.5px 3.5px 2.5px black ;
+    }
+  }
+  .invalid input  , .invalid textarea {
+    border: 3px solid $main-color !important;
+    background-color: $main-color !important;
+    &::placeholder {
+      color: white;
+    }
+  }
+  
+  .invalid input:focus , .invalid textarea:focus {
+    border-color:  rgb(196, 67, 67) !important;
+    background-color:  rgb(196, 67, 67) !important;
+  }
+  
+  .error-text {
+    color: $main-color;
+    font-size: smaller;
+    font-style :italic;
+    margin-top: 2px;
+    text-shadow: 3.5px 3.5px 2.5px black ;
+  }
+}
+//------------------
+.form-btn{
+  cursor: pointer;
+  font-weight: bolder;
+  padding: 1rem;
+  @extend %btnrad ;
+  @extend %tran ;
+  border: rgb(196, 67, 67)  2px solid !important;
+  background-color: transparent !important;
+  color:  rgb(196, 67, 67) !important;
+  &:hover {
+    background-color:  rgb(196, 67, 67) !important;
+    color: white!important;
+    box-shadow: 5px 10px 18px rgba(255, 0, 0, 0.25);
+  }
+  &:disabled ,
+  &:disabled:hover {
+    box-shadow: none;
+    cursor: not-allowed !important;
+    background-color: $lighter-shadow !important;
+    color: $dark-shadow !important;
+    border: $dark-shadow 2px solid !important;
+    box-shadow: -10px -10px 15px $dark-shadow , 3px 3px 20px $lighter-shadow;
+    @extend %tran ;
+    @extend %animat ;
+  }
+}
+
+
+%animat {
+  //animation: warning 0.6s ease-in-out 0.2s infinite alternate fbackwards !important;
+  //-webkit-animation: warning 0.6s ease-in-out 0.2s infinite alternate fbackwards !important;
+  animation: warning 1.8s linear 0.3s infinite;
+  -webkit-animation: warning 1.8s linear 0.3s infinite;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+
+
+@keyframes warning {
+  0% {
+      opacity: 0;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1 ;
+  }
+}
+
+
+.copyright {
+  word-spacing: 3.5px;
+  text-shadow: 9.5px 9.5px 2.5px black ;
+  span {
+    color  :$main-color ;
+  }
+}
+
+
+a.email {
+  text-decoration: none;
+  width: 70%;
+}
+
+img.mailImg {
+  width: 20%;
+}
+
+
+
