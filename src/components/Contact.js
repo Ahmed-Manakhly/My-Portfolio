@@ -1,43 +1,19 @@
 import useInput from '../hooks/Use-Input';
 import React, { useRef , useState} from 'react';
 import emailjs from '@emailjs/browser';
-import { FaFacebookF, FaTwitter, FaLinkedinIn } from "react-icons/fa";
+import { FaFacebookF } from "react-icons/fa";
 import  contactImg  from '../assets/contactImg.png';
-import emailIcon from "../assets/email.png"
-// import { FaCss3Alt } from "react-icons/fa";
-// import { FaHtml5 } from "react-icons/fa";
-// import { SiJest } from "react-icons/si";
-// import { FaGithub } from "react-icons/fa";
-// import { DiBootstrap } from "react-icons/di";
-// import { SiRedux } from "react-icons/si";
-// import { SiReactrouter } from "react-icons/si";
-// import { FaBootstrap } from "react-icons/fa";
-// import { FaReact } from "react-icons/fa";
-// import { SiTypescript } from "react-icons/si";
-// import { SiJavascript } from "react-icons/si";
-// import { FaSass } from "react-icons/fa";
-import {Container , Row , Col  } from 'react-bootstrap' 
+import { FaWhatsapp } from "react-icons/fa";
+import { FaMobileAlt } from "react-icons/fa";
+import {Container , Row , Col  } from 'react-bootstrap'  
+import linkedin from '../assets/linkedin.png' ;
+import github from '../assets/github.png' ;
+//-------------------------------- whatsapp
+const whatsapp  = 'https://wa.me/201015525458?text=Thank%20you%20for%20reaching%20out%20to%20me.%20How%20can%20I%20assist%20you?' ;
 
 const   Contact = () => {
     const [message, setMessage] = useState(false);
     const formRef = useRef();
-
-    //-------------------------------------------------
-    // const skills = [
-    //     {name : 'HTML' , progress : 'Experienced' , icon :  < FaHtml5 className="skillIco"/> },
-    //     {name : 'CSS' , progress : 'Experienced' , icon :  < FaCss3Alt className="skillIco"/> },
-    //     {name : 'JavaScript' , progress : 'Experienced' , icon :  < SiJavascript className="skillIco"/> },
-    //     {name : 'SASS' , progress : 'Experienced' , icon :  < FaSass className="skillIco"/> },
-    //     {name : 'TypeScript' , progress : 'Very Good' , icon :  < SiTypescript className="skillIco"/>},
-    //     {name : 'React' , progress : 'Experienced' , icon :  < FaReact className="skillIco"/> },
-    //     {name : 'Bootstrap' , progress : 'Very Good' , icon :  < FaBootstrap className="skillIco"/> },
-    //     {name : 'React-Router' , progress : 'Very Good' , icon :  < SiReactrouter className="skillIco"/> },
-    //     {name : 'React-Redux' , progress : 'Very Good' , icon :  < SiRedux className="skillIco"/> },
-    //     {name : 'React-Bootstrap' , progress : 'Good' , icon :  < DiBootstrap className="skillIco"/> },
-    //     {name : 'Git & GitHub' , progress : 'Good' , icon :  < FaGithub className="skillIco"/> },
-    //     {name : 'JEST' , progress : 'basic knowledge' , icon :  < SiJest className="skillIco"/> },
-    // ]
-    //------------------------------------------------------
     //-----------------------------------------------------------------------
     const {value : enteredName ,hasError : nameInputIsInvalid , valueIsValid : enteredNameIsValid ,
         valueChangeHandler : nameInputChangeHandler , inputBlurHandler : nameInputBlurHandler , reset : resetNameInput} = useInput(value => value.trim() !=='') ;
@@ -52,68 +28,29 @@ const   Contact = () => {
     if(enteredNameIsValid && enteredEmailIsValid && enteredLNameIsValid && enteredMsgIsValid){
     formIsValid = true;
     }
-    //-------------------------------------------------
-    // const sendRequest = async (fName , lName , email , msg) => {
-    //     const response = await fetch('https://formspree.io/f/xvoljplw' ,{
-    //         method : 'POST',
-    //         body : JSON.stringify({'First Name':fName , "Last Name" : lName , "Email Address" : email, "Message" : msg}) ,
-    //         });
-    //         //--------------------------
-    //         if(!response.ok) {
-    //         throw new Error('Sending  Data Failed!') ;
-    //         }
-    // }
-    //-----------------------------------------------------------------------
-
-    //--------------------------------------------------
-    // const formSubmissionHandler = async(event) => {
-    
-    // if(!formIsValid){
-    //     event.preventDefault() ;
-    //     return;
-    // } ;
-    // console.log(enteredName) ;
-    // console.log(enteredLName) ;
-    // console.log(enteredEmail) ;
-    // console.log(msg) ;
-    // //-------------------------
-
-    // resetNameInput() ;
-    // resetEmailInput() ;
-    // resetLNameInput() ;
-    // resetMsg() ;
-    // }
-    //------------------
     const handleSubmit = (e) => {
         e.preventDefault();
         if(!formIsValid){
             return;
         } ;
-        emailjs
-          .sendForm(
+        emailjs.sendForm(
             'service_nt6pjws',
             'template_2rxlwwg',
             formRef.current,
-            'jt-x6mQFrGGDKFCAh'
-          )
-          .then(
+            'jt-x6mQFrGGDKFCAh').then(
             (result) => {
-              console.log(result.text);
-              setMessage(true);
+                console.log(result.text);
+                setMessage(true);
             },
             (error) => {
-              console.log(error.text);
-            }
-          );
+                console.log(error.text);
+            });
     
         e.target.reset();
         resetNameInput() ;
         resetEmailInput() ;
         resetLNameInput() ;
-        resetMsg() ;
-      };
-
-
+        resetMsg() ;};
     //--------------------------------------------------
     const nameInputClasses = nameInputIsInvalid? 'form-control invalid' : 'form-control' ;
     const lNameInputClasses = lNameInputIsInvalid? 'form-control invalid' : 'form-control' ;
@@ -132,31 +69,30 @@ const   Contact = () => {
                 </Col>
             </Row>
             <Row md={2} xs={1} lg={3} className={`g-5  p-5   gap-5 justify-content-center `}>
-                <Col className="contact-col d-flex flex-column justify-content-center  p-4 align-items-center">
+                <Col className="contact-col d-flex flex-column justify-content-center ">
                     <Row className="overflow-hidden rounded-3 m-4">
                         <img src={contactImg} alt="contactImg" className=" img-fluid p-0"/>
                     </Row>
                     <Row><h1 className="title">Ahmed El Manakhly</h1></Row>
                     <Row><p className="section__text__p2">Frontend Developer</p></Row>
                     <Row><p className="section__text__p1 text-center">It would be a pleasure to hear from you</p></Row>
-                    <Row><p className="section__text__p1 text-center">Phone Numbers :</p></Row>
-                    <Row><span className="text-white-50">01015525458  &  01015525458</span> <span className=""></span> </Row>
-                    <Row><p className="section__text__p1 text-center">Email Address :</p></Row>
-                    <Row className='d-flex justify-content-center '>
-                    <img
-                        src={emailIcon}
-                        alt="Email icon"
-                        className=" img-fluid  mailImg"
-                        />
-                    <span ><a href="mailto:selmnakhly@gmail.com" className='form-btn email'>Aelmnakhly@gmail.com</a></span>
-                    </Row>
-                    <Row><p className="section__text__p2">FIND ME IN</p></Row>
-                    <div className="socials-container">
-                        <FaLinkedinIn className="icon fs-5" onClick={()=>{window.location.href='https://linkedin.com/'}} />
-                        <FaTwitter className="icon" onClick={()=>{window.location.href='https://github.com/'}} />
-                        <FaFacebookF className="icon" onClick={()=>{window.location.href='https://github.com/'}} />
+                    <div className="socials-container w-100 d-flex justify-content-between m-2 ">
+                        <FaMobileAlt className="icon fs-5" />
+                        <Col className="text-white-50 text-center" >+201117001445</Col>
+                    </div>
+                    <div className="socials-container w-100 d-flex justify-content-between m-2 ">
+                        <FaWhatsapp className="icon fs-5 " onClick={()=>{window.open(whatsapp)}}/>
+                        <Col className="text-white-50 text-center" >+201015525458</Col>
+                    </div>      
+                    <a href="mailto:aelmnakhly@gmail.com" className='form-btn email p-2 w-100 d-flex justify-content-center '>Aelmnakhly@gmail.com</a>
+                    <div><p className="section__text__p2 w-100 d-flex justify-content-center m-2 ">FIND ME IN</p></div>
+                    <div className="socials-container w-100 d-flex justify-content-center m-4  ">
+                        <img src={linkedin} alt="My LinkedIn profile" className="icon" onClick={()=>{window.open('https://www.linkedin.com/in/ahmed-manakhly-6b9543219')}} />
+                        <img src={github} alt="My Github profile" className="icon" onClick={()=>{window.open('https://github.com/Ahmed-Manakhly')}} />
+                        <FaFacebookF className="icon" onClick={()=>{window.open('https://www.facebook.com/profile.php?id=100007848870358')}} />
                     </div>
                 </Col>
+
                 <Col  className="contact-col flex-fill ">
                     <form ref={formRef} onSubmit={handleSubmit}>
                     <Col className='d-flex flex-column justify-content-center  p-4 align-items-center'>

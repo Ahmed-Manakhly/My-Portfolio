@@ -2,10 +2,8 @@ import React from "react";
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import logo from '../assets/logo.png' ;
-// import Toggler from './Toggler' ;
+import logo from '../assets/logo2.png' ;
 import { FiMenu } from "react-icons/fi";
-// import {NavLink} from 'react-router-dom' ;
 
 const Header = () => {
 
@@ -14,7 +12,6 @@ const Header = () => {
             <Navbar collapseOnSelect expand="lg" sticky='top' className="  d-flex justify-content-around mainNav">
               <Container>
                 <Navbar.Brand href="#home"><img src={logo} alt="logo" className=" img-fluid logo"/></Navbar.Brand>
-                {/* <Navbar.Toggle aria-controls="responsive-navbar-nav" className="text-danger"/> */}
                 <Navbar.Toggle aria-controls="basic-navbar-nav"> <FiMenu className="toggler"/> </Navbar.Toggle>
                 <Navbar.Collapse id="responsive-navbar-nav">
                 <Nav className="ms-auto ">
