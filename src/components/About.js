@@ -27,8 +27,8 @@ const   About = () => {
                         <Card.Body>
                             <Card.Title className='text-white fst-italic '>2003 – 2007</Card.Title>
                             <Card.Text className ='text-white-50 '>
-                                <strong className ='text-white'>Bachelor of Management information system </strong>.
-                                <p>Ras Al-Bar Academy for Qualitative studies</p>
+                                <strong className ='text-white'>Bachelor Of Information System </strong>.
+                                <p>Ras El-Bar Academy For Computer Science And Specific Studies</p>
                             </Card.Text>
                             <Card.Title className='text-white fst-italic '>Courses</Card.Title>
                             <Card.Text className ='text-white-50 '>
