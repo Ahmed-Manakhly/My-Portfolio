@@ -9,7 +9,7 @@ import {Container , Row , Col  } from 'react-bootstrap'
 import linkedin from '../assets/linkedin.png' ;
 import github from '../assets/github.png' ;
 //-------------------------------- whatsapp
-const whatsapp  = 'https://wa.me/201015525458?text=Thank%20you%20for%20reaching%20out%20to%20me.%20How%20can%20I%20assist%20you?' ;
+const whatsapp  = 'https://wa.me/201117001445?text=Hi%20,%20Are%20You%20Free%20For%20Work' ;
 
 const   Contact = () => {
     const [message, setMessage] = useState(false);
