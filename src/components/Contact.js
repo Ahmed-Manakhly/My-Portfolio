@@ -82,7 +82,7 @@ const   Contact = () => {
                     </div>
                     <div className="socials-container w-100 d-flex justify-content-between m-2 ">
                         <FaWhatsapp className="icon fs-5 " onClick={()=>{window.open(whatsapp)}}/>
-                        <Col className="text-white-50 text-center" >+201015525458</Col>
+                        <Col className="text-white-50 text-center" >+201117001445</Col>
                     </div>      
                     <a href="mailto:aelmnakhly@gmail.com" className='form-btn email p-2 w-100 d-flex justify-content-center '>Aelmnakhly@gmail.com</a>
                     <div><p className="section__text__p2 w-100 d-flex justify-content-center m-2 ">FIND ME IN</p></div>
